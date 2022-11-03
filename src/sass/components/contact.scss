@@ -1,0 +1,262 @@
+.contact {
+  padding-bottom: 70px;
+
+  &-title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: 'TTFirsNeue';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-map {
+    position: relative;
+    width: 66%;
+    height: 460px;
+
+    .open-adress {
+      display: none;
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 48%;
+      padding: 34px 60px 10px;
+      background-color: #202020D9;
+      color: $light-text;
+
+      &.visible {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &__btn {
+        position: absolute;
+        top: 23px;
+        right: 19px;
+        z-index: 30;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: $form-text;
+        transition: background-color .3s ease-in-out;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 10px;
+          width: 1px;
+          height: 12px;
+          background-color: #ffffff;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 10px;
+          width: 1px;
+          height: 12px;
+          background-color: #ffffff;
+          transform: rotate(135deg);
+        }
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: $focus-background;
+      }
+
+      &:active {
+        background-color: $active-color;
+      }
+      }
+
+      &__title {
+        margin: 0;
+        margin-bottom: 8px;
+        font-family: 'TTFirsNeue';
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 22px;
+      }
+
+      &__text {
+        margin: 0;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: $grey-text;
+      }
+
+      &__tel {
+        padding-left: 20px;
+        font-family: 'TTFirsNeue';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #FF6E30;
+        background-image: url('../img/svg/tel.svg');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    width: 34%;
+    padding-left: 30px;
+
+    &__title {
+      margin: 0;
+      margin-top: -5px;
+      margin-bottom: 5px;
+      font-family: 'TTFirsNeue';
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 22px;
+    }
+
+    &__descr {
+      margin: 0;
+      margin-bottom: 15px;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      color: $form-text;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &__label {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;        
+      }
+
+      &__input {
+        width: 100%;
+        padding: 14px 22px;
+        background: #e9e9e9;
+        border: 1px solid #e9e9e9;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $dark-background;
+        transition: border .3s ease-in-out;
+
+        &::placeholder {
+          font-family: 'Roboto';
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: $form-text;
+          transition: color .3s ease-in-out;
+        }
+
+        &:hover::placeholder {
+          color: $hover-color;
+        }
+
+        &:focus {
+          border: 1px solid $hover-color;
+        }
+
+        &:active {
+          border: 1px solid #e9e9e9;
+        }
+      }
+
+      &__textarea {
+        width: 100%;
+        height: 148px;
+        overflow-y: visible;
+        padding: 15px 23px 16px;
+        background: #e9e9e9;
+        border: 1px solid #e9e9e9;
+        border: none;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $dark-background;
+        transition: border .3s ease-in-out;
+
+        &::placeholder {
+          font-family: 'Roboto';
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          color: $form-text;
+        }
+
+        &:hover::placeholder {
+          color: $hover-color;
+        }
+
+        &:focus {
+          border: 1px solid $hover-color;
+        }
+
+        &:active {
+          border: 1px solid #e9e9e9;
+        }
+      }
+
+      &__btn {
+        @include orange-btn;
+        width: 126px;
+      }
+    }
+  }
+
+  .js-validate-error-field {
+    border: 1px solid $error-color !important;
+  }
+
+  .js-validate-error-label {
+    position: absolute;
+    top: 3px;
+    left: 23px;
+    color: $error-color !important;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+
+  .ymaps-2-1-79-map-copyrights-promo {
+    display: none;
+  }
+
+  .ymaps-2-1-79-copyright__content {
+    display: none;
+  }
+
+  [class*="ground-pane"] {
+    filter: grayscale(1);
+  }
+}

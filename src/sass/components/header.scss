@@ -1,0 +1,110 @@
+
+.header {
+  background-color: $dark-background;
+  color: $light-text;
+  height: 80px;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+
+  .logo-svg {
+    width: 190.25px;
+    height: 30.7px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-item {
+    display: inline-block;
+    font-family: 'TTFirsNeue';
+	  font-weight: 400;
+
+    &:not(:last-child) {
+      margin-right: 75px;
+    }
+
+    &__link {
+      padding: 5px;
+
+      &:hover {
+        color: $hover-color;
+      }
+  
+      &:focus {
+        outline: none;
+        color: $light-text;
+        background-color: $focus-background;
+      }
+  
+      &:active {
+        color: $active-color;
+        background-color: transparent;
+      }
+    }
+  }
+
+
+  &-search {
+    margin-left: 40px;
+
+    &.visible {
+      display: flex;
+      flex-wrap: nowrap;
+      margin-left: 10px;
+    }
+
+    &__field {
+      width: 0;
+      padding: 0;
+      text-align: left;
+      color: #e9e9e9;
+      border-bottom: 1px solid #e9e9e9;
+      opacity: 0;
+      transition: opacity .3s ease-in-out, width .3s ease-in-out, border .3s ease-in-out;
+      
+      &::placeholder {
+        font-size: 14px;
+        color: #e9e9e9;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $hover-color;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $focus-background;
+      }
+
+      &:active {
+        border-bottom: 1px solid $active-color;
+      }
+
+      &.open {
+        width: 169px;
+        opacity: 1;
+
+        &:hover {
+
+        }
+      }
+    }
+  }
+  
+  .search-submit {
+    &:hover .search-submit__svg{
+      fill: #ff6e30;
+    }
+
+  }
+  .search-submit__svg {
+    width: 25px;
+    height: 25px;
+  }
+}

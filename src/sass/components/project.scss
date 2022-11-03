@@ -1,0 +1,190 @@
+.project {
+  padding-top: 68px;
+ margin-bottom: 70px;
+
+  &-title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'TTFirsNeue';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: $dark-background;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: 300px 300px;
+    grid-gap: 30px;
+    grid-template-areas: 
+      "project-one project-one project-two project-two project-three project-three project-four project-four project-four project-four project-four project-four"
+      "project-five project-five project-five project-five project-five project-five project-six project-six project-six project-seven project-seven project-seven";
+
+    &__card--one {
+      grid-area: project-one;
+    }
+    &__card--two {
+      grid-area: project-two;
+    }
+    &__card--three {
+      grid-area: project-three;
+    }
+
+    &__card--four {
+      grid-area: project-four;
+    }
+
+    &__card--five {
+      grid-area: project-five;
+    }
+
+    &__card--six {
+      grid-area: project-six;
+    }
+
+    &__card--seven {
+      grid-area: project-seven;
+    }
+
+    .small-card {
+      max-width: 190px;
+
+      &__top {
+        position: relative;
+        margin-bottom: 15px;
+
+        & .heshtag {
+          top: 8px;
+          right: 6px;
+        }
+      }
+
+      &__text {
+        margin: 0;
+        margin-bottom: 10px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+
+    }
+
+    .big-card {
+      position: relative;
+      min-width: 630px;
+      width: 100%;
+      height: 100%;
+
+      & picture {
+        position: absolute;
+        z-index: 1;
+        object-fit: cover;
+      }
+
+      & .heshtag {
+        top: 10px;
+        right: 7px;
+      }
+
+      .big-content {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        bottom: 30px;
+        max-width: 46.5%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+        &__date {
+          background-image: url('../img/svg/calendar-white.svg');
+          background-repeat: no-repeat;
+          background-size: 14px 14px;
+          background-position: left center;
+        }
+
+        &__title {
+          margin: 0;
+          margin-bottom: 5px;
+          font-family: 'TTFirsNeue';
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 24px;
+        }
+
+        &__text {
+          margin: 0;
+          font-family: 'Roboto';
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+        }
+
+        &__btn {
+          display: inline;
+          max-width: 121px;
+          margin-top: auto;
+          color: $light-text;
+          background-color: transparent;
+          padding: 12px 19px;
+          font-family: 'Roboto';
+          font-weight: 700;
+          font-size: 16px;
+          border: 3px solid $btn-color;
+          transition: border .3s ease-in-out, background-color .3s ease-in-out;
+          
+          &:hover {
+            background-color: $hover-color;
+          }
+
+          &:focus {
+            outline: none;
+            background-color: $focus-background;
+          }
+
+          &:active {
+            background-color: $active-color;
+            border: 3px solid $active-color;
+          }
+        }
+      }
+
+      
+    }
+
+    .middle-card {
+      max-width: 300px;
+
+      &__top {
+        position: relative;
+        margin-bottom: 15px;
+
+        & .heshtag {
+          top: 8px;
+          right: 6px;
+        }
+      }
+
+      &__text {
+        margin: 0;
+        margin-bottom: 10px;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,90 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  font-size: $base-font-size;
+  font-family: $base-font-family, sans-serif;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+}
+
+.stop-scroll {
+  @include stop-scroll
+}
+
+.visually-hidden {
+  @include visually-hidden
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.btn--reset {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1320px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.heshtag {
+  position: absolute;
+  z-index: 100;
+  top: 15px;
+  right: 13px;
+  padding: 6px 15px;
+  color: white;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: $dark-background;
+}
+
+.date {
+  padding-left: 18px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: #999999;
+  background-image: url('../img/svg/calendar.svg');
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+}

@@ -1,0 +1,17 @@
+-var list = [{name:"О студии", href:"#about"}, {name:"Наши проекты", href:"#project"}, {name:"Услуги", href:"#"}, {name: "Мастер-классы", href:"#"},  {name: "Контакты", href:"#contact"}]
+
+header.header
+  .container.header-container
+    a.logo(href="#")
+      svg.logo-svg
+        use(xlink:href="img/sprite.svg#logo")
+    nav.header-menu
+      ul.header-list
+        each item in list
+          li.header-item
+            a.header-item__link(href=item.href)= item.name
+    form.header-search(action="#")
+      input(type="search" name="header-search" placeholder="Что будем искать?" class="input-reset header-search__field")
+      button(type="button" aria-label="найти" class="btn btn--reset header-search__submit search-submit")
+        svg.search-submit__svg
+          use(xlink:href="img/sprite.svg#search")
