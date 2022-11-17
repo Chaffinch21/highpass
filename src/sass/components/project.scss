@@ -1,6 +1,22 @@
 .project {
   padding-top: 68px;
- margin-bottom: 70px;
+  margin-bottom: 70px;
+
+  @media(max-width: 1024px) {
+    margin-bottom: 67px;
+  }
+
+  @media(max-width: 768px) {
+    margin-bottom: 60px;
+  }
+
+  @media(max-width: 767px) {
+    padding-top: 50px;
+  }
+
+  @media(max-width: 390px) {
+    margin-bottom: 53px;
+  }
 
   &-title {
     margin: 0;
@@ -10,16 +26,83 @@
     font-size: 24px;
     line-height: 31px;
     color: $dark-background;
+
+    @media(max-width: 767px) {
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 15px;
+    }
   }
 
   &-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     grid-template-rows: 300px 300px;
     grid-gap: 30px;
     grid-template-areas: 
       "project-one project-one project-two project-two project-three project-three project-four project-four project-four project-four project-four project-four"
       "project-five project-five project-five project-five project-five project-five project-six project-six project-six project-seven project-seven project-seven";
+
+    @media(max-width:1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      grid-template-rows: 285px 307px 307px;
+      grid-row-gap: 25px;
+      grid-template-areas: 
+      "project-one project-one project-two project-two project-three project-three project-three project-three"
+      "project-four project-four project-four project-four project-four project-six project-six project-six"
+      "project-seven project-seven project-seven project-five project-five project-five project-five project-five";
+    }
+
+    @media(max-width:768px) {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      grid-template-rows: 300px 300px 307px 300px;
+      grid-gap: 30px;
+      grid-template-areas: 
+      "project-one project-one project-two project-two project-three project-three"
+      "project-four project-four project-four project-four project-four project-four"
+      "project-six project-six project-six project-seven project-seven project-seven"
+      "project-five project-five project-five project-five project-five project-five";
+    }
+
+    @media(max-width:748px) {
+      grid-template-rows: 300px 300px 40vw 300px;
+    }
+
+    @media(max-width:648px) {
+      grid-gap: 20px;
+    }
+
+    @media(max-width:500px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 300px 300px 307px 307px 200px;
+      grid-gap: 20px;
+      grid-template-areas: 
+      "project-one project-two"
+      "project-three project-three"
+      "project-four project-four"
+      "project-five project-five"
+      "project-six project-seven";
+      // "project-seven project-seven";
+    }
+
+    @media(max-width:390px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 278px 278px 278px 422px 300px 300px 422px;
+      grid-gap: 25px;
+      grid-template-areas: 
+      "project-one"
+      "project-two"
+      "project-three"
+      "project-four"
+      "project-six"
+      "project-seven"
+      "project-five";
+      // "project-seven project-seven";
+    }
+
+    &__card {
+      position: relative;
+    }
 
     &__card--one {
       grid-area: project-one;
@@ -48,15 +131,54 @@
     }
 
     .small-card {
-      max-width: 190px;
+
+      &--stretch {
+        @media (min-width: 769px) and (max-width: 1024px){
+          max-width: 466px;
+        }
+
+        @media (max-width: 768px) {
+          max-width: 218px;
+        }
+
+        @media (max-width: 500px){
+          max-width: 466px;
+        }
+      }
 
       &__top {
+        width: 100%;
         position: relative;
         margin-bottom: 15px;
+
+        @media (max-width: 1024px) {
+          height: 184px;
+        }
+
+        @media (max-width: 390px) {
+          margin-bottom: 20px;
+        }
 
         & .heshtag {
           top: 8px;
           right: 6px;
+        }
+      }
+
+      &__picture {
+        width: 100%;
+
+        @media (max-width: 1023px) {
+          height: 100%;
+        }
+      }
+
+      &__img {
+        
+        @media(max-width: 1024px) {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
 
@@ -71,19 +193,44 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
+
+        @media (max-width: 1024px) {
+          -webkit-line-clamp: 2;
+          margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+          -webkit-line-clamp: 3;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 500px) {
+          font-size: 16px;
+          -webkit-line-clamp: 2;
+        }
       }
 
     }
 
     .big-card {
       position: relative;
-      min-width: 630px;
       width: 100%;
       height: 100%;
 
       & picture {
+        width: 100%;
+        height: 100%;
         position: absolute;
         z-index: 1;
+        overflow: hidden;
+      }
+
+      &__img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
 
@@ -103,6 +250,32 @@
         flex-direction: column;
         color: white;
 
+        @media(max-width:1280px) {
+          top: 29px;
+          bottom: 37px;
+          max-width: 60%;
+        }
+
+        @media(max-width:1024px) {
+          top: 29px;
+          bottom: 37px;
+          max-width: 50%;
+        }
+
+        @media(max-width:768px) {
+          top: 29px;
+          bottom: 32px;
+          max-width: 41%;
+        }
+
+        @media(max-width:600px) {
+          justify-content: end;
+        }
+
+        @media(max-width:500px) {
+          max-width: 65%;
+        }
+
         &__date {
           background-image: url('../img/svg/calendar-white.svg');
           background-repeat: no-repeat;
@@ -117,6 +290,11 @@
           font-weight: 700;
           font-size: 24px;
           line-height: 24px;
+
+          @media(max-width: 500px) {
+            margin-bottom: 15px;
+            margin-top: 7px;
+          }
         }
 
         &__text {
@@ -125,6 +303,11 @@
           font-weight: 400;
           font-size: 16px;
           line-height: 22px;
+
+          @media(max-width: 500px) {
+            font-size: 14px;
+            line-height: 16px;
+          }
         }
 
         &__btn {
@@ -139,6 +322,13 @@
           font-size: 16px;
           border: 3px solid $btn-color;
           transition: border .3s ease-in-out, background-color .3s ease-in-out;
+
+          @media(max-width: 500px) {
+            max-width: 109px;
+            padding: 8px 0px;
+            margin-top: 20px;
+            font-size: 14px;
+          }
           
           &:hover {
             background-color: $hover-color;
@@ -160,11 +350,18 @@
     }
 
     .middle-card {
-      max-width: 300px;
 
       &__top {
         position: relative;
         margin-bottom: 15px;
+
+        @media(max-width: 768px) {
+          margin-bottom: 8px;
+        }
+
+        @media(max-width: 390px) {
+          margin-bottom: 15px;
+        }
 
         & .heshtag {
           top: 8px;
@@ -183,8 +380,29 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
+
+        @media(max-width: 1024px) {
+          margin-bottom: 15px;
+        }
+
+        @media (max-width: 600px) {
+          font-size: 14px;
+          -webkit-line-clamp: 2;
+        }
+
+        @media (max-width: 390px) {
+          font-size: 16px;
+          -webkit-line-clamp: 3;
+        }
       }
 
+
+    }
+  }
+
+  &-heshtag {
+    @media(max-width: 767px) {
+      padding: 4px 13px;
     }
   }
 }

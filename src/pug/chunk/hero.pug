@@ -1,15 +1,25 @@
 section.hero
   .container.hero-container
-    .hero-card.hero-card--one
+    article.hero-card
       span.heshtag #мастеркласс
       .hero-card__content.card-content
         p.card-content__descr Мастер-класс от Игоря Робова
         h2.card-content__title Неоновый фотосет 2.0 7 июля 20:00
         button.btn--reset.card-content__btn Узнать больше
-    .hero-card.hero-card--two
-      p.hero-text Работы участников предыдущего мастер-класса
-      img.hero-image(src="./img/hero2.jpg" alt="портретное фото")
-    .hero-card.hero-card--three
-      img.hero-image.hero-image--3(src="./img/hero3.jpg" alt="портретное фото")
-    .hero-card.hero-card--four
-      img.hero-image.hero-image--4(src="./img/hero4.jpg" alt="портретное фото")
+    .hero-photo
+      p.hero-photo__text Работы участников предыдущего мастер&#8209;класса
+      .hero-grid
+        picture.hero-grid__picture
+          source.hero-image(media="(max-width: 400px)", srcset="./img/hero2-768.jpg 1x")
+          source.hero-image(media="(max-width: 620px)", srcset="./img/hero2.jpg 1x")
+          source.hero-image(media="(max-width: 768px)", srcset="./img/hero2-768.jpg 1x")
+          source.hero-image(media="(max-width: 1024px)", srcset="./img/hero2-1024.jpg 1x")
+          source.hero-image(media="(min-width: 1025px)", srcset="./img/hero2.jpg 1x")
+          img.hero-image(src="./img/hero2.jpg" alt="портретное фото")
+        picture.hero-grid__picture
+          source.hero-image(media="(max-width: 620px)", srcset="./img/hero3.jpg 1x")
+          source.hero-image(media="(max-width: 1024px)", srcset="./img/hero3-1024.jpg 1x")
+          source.hero-image(media="(min-width: 1025px)", srcset="./img/hero3.jpg 1x")
+          img.hero-image(src="./img/hero3.jpg" alt="портретное фото")
+        picture.hero-grid__picture
+          img.hero-image(src="./img/hero4.jpg" alt="портретное фото")

@@ -4,7 +4,13 @@ section.about( id="about")
       h2.about-content__title О студии
       p.about-content__text В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.
     .about-subscribe
-      img.about-subscribe__img( src="./img/about.jpg" alt="фотоаппарат")
+      picture
+        source.hero-image(media="(max-width: 400px)", srcset="./img/about-320.jpg 1x")
+        source.hero-image(media="(max-width: 767px)", srcset="./img/about.jpg 1x")
+        source.hero-image(media="(max-width: 850px)", srcset="./img/about-768.jpg 1x")
+        source.hero-image(media="(max-width: 1120px)", srcset="./img/about-1024.jpg 1x")
+        source.hero-image(media="(min-width: 1121px)", srcset="./img/about.jpg 1x")
+        img.about-subscribe__img( src="./img/about.jpg" alt="фотоаппарат")
       h2.about-subscribe__title Подписаться на рассылку
       form.about-subscribe__form.about-form(action="#" method="POST" name="about-form" enctype="multipart/form-data")
         label.about-form__label

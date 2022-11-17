@@ -8,6 +8,12 @@
   border: 3px solid $btn-color;
   transition: border .3s ease-in-out, background-color .3s ease-in-out;
 
+  @media (max-width: 620px) {
+    padding: 8px 18px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
   &:hover {
     background-color: $focus-background;
     border: 3px solid $focus-background;

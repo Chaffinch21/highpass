@@ -1,32 +1,32 @@
-.hero-container {
+.hero {
   padding-top: 40px;
   padding-bottom: 65px;
-  display: grid;
-  grid-template-columns: minmax(278px, 630px) minmax(156px, 300px) minmax(156px, 300px);
-  gap: 30px;
-  grid-template-areas: 
-  "card-one card-two card-two"
-  "card-one card-three card-four";
 
-  .hero-card {
-    width: 100%;
-    justify-self: stretch;
+  @media (max-width: 1024px) {
+    padding-top: 35px;
+  }
 
-    & picture {
-      width: 100%;
-      height: 100%;
+  @media (max-width: 1023px) {
+    padding-top: 80px;
+  }
 
-      & source,
-      & img {
-        display: block;
-        width: 100%;
-        object-fit: cover;
-      }
+  @media (max-width: 767px) {
+    padding-top: 75px;
+    padding-bottom: 45px;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    
+    @media(max-width: 620px) {
+      flex-direction: column;
     }
 
-    &--one {
+    .hero-card {
+      width: 49%;
+      align-items: stretch;
       position: relative;
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: end;
@@ -36,70 +36,184 @@
       background-repeat: no-repeat;
       background-size: cover;
 
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 0.5%;
-        box-shadow: 0px 2px 10px 1px #202020;
-      }
-
-      .card-content {
-        display: inline-block;
-        align-items: flex-end;
-
-        &__descr {
-          margin: 0;
-          color: $light-text;
+        @media(max-width: 1024px) {
+          padding: 30px 30px;
+          background-image: url("../img/hero1-1024.jpg");
         }
 
-        &__title {
-          margin: 0;
-          margin-bottom: 22px;
-          color: $light-text;
-          font-family: 'TTFirsNeue';
-          font-weight: 700;
-          font-size: 36px;
-          line-height: 104%;
+        @media (max-width: 768px) {
+          width: 48%;
         }
 
-        &__btn {
-          @include orange-btn;
+        @media(max-width: 620px) {
+          width: 100%;
+          min-height: 420px;
+          background-position: center center;
+          margin-bottom: 35px;
         }
-      }
-    }
+  
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.5%;
+          box-shadow: 0px 2px 10px 1px #202020;
+        }
+  
+        .card-content {
+          display: inline-block;
+          align-items: flex-end;
+  
+          &__descr {
+            margin: 0;
+            color: $light-text;
 
-    &--two {
-      grid-area: card-two;
-    }
-    
-    &--three {
-      grid-area: card-three;
-      justify-self: end;
-    }
-    
-    &--four {
-      grid-area: card-four;
-      justify-self: end;
-    }
+            @media (max-width: 1024px) {
+              margin-bottom: 5px;
+            }
 
-    .hero-image {
-      width: 100%;
-      object-fit: cover;
+            @media (max-width: 620px) {
+              font-size: 14px;
+              line-height: 16px;
+            }
+          }
+  
+          &__title {
+            margin: 0;
+            margin-bottom: 22px;
+            color: $light-text;
+            font-family: 'TTFirsNeue';
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 104%;
+
+            @media (max-width: 1024px) {
+              font-size: 34px;
+            }
+
+            @media (max-width: 620px) {
+              margin-bottom: 15px;
+              font-size: 24px;
+              line-height: 110%;
+            }
+          }
+  
+          &__btn {
+            @include orange-btn;
+          }
+        }
     }
   
-    .hero-text {
-      margin: 0;
-      margin-bottom: 20px;
-      font-family: 'TTFirsNeue';
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 104%;
+    .hero-photo {
+      width: 49%;
+      @media (max-width: 768px) {
+        width: 48%;
+      }
+
+      @media (max-width: 620px) {
+        width: 100%;
+      }
+
+      &__text {
+        margin: 0;
+        margin-bottom: 20px;
+        font-family: 'TTFirsNeue';
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 104%;
+
+        @media(max-width: 1024px) {
+          margin-bottom: 22px;
+        }
+
+        @media (max-width: 1023px) {
+          font-size: 22px;
+          margin-bottom: 16px;
+        }
+
+        @media (max-width: 767px) {
+          font-size: 18px;
+        }
+      }
+
+      .hero-grid {
+        width: 100%;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: 1fr 1fr;
+        // grid-template-rows: 300px 257px;
+
+        &__picture {
+          width: 100%;
+          object-fit: cover;
+          overflow: hidden;
+          &:nth-child(1) {
+            grid-column: span 2;
+            max-height: 300px;
+            object-position: 80% 70%;
+
+            @media (max-width: 1024px) {
+              max-height: 332px;
+            }
+
+            @media (max-width: 768px) {
+              max-height: 288px;
+            }
+          }
+  
+          &:nth-child(2) {
+            grid-column: 1;
+            grid-row: 2;
+            max-height: 257px;
+
+            @media (max-width: 1024px) {
+              max-height: 186px;
+            }
+
+            @media (max-width: 768px) {
+              max-height: 133px;
+            }
+
+            @media (max-width: 620px) {
+              max-height: 186px;
+            }
+
+            @media (max-width: 400px) {
+              max-height: 133px;
+            }
+          }
+  
+          &:nth-child(3) {
+            grid-column: 2;
+            grid-row: 2;
+            max-height: 257px;
+
+            @media (max-width: 1024px) {
+              max-height: 186px;
+            }
+
+            @media (max-width: 768px) {
+              max-height: 133px;
+            }
+
+            @media (max-width: 620px) {
+              max-height: 186px;
+            }
+
+            @media (max-width: 400px) {
+              max-height: 133px;
+            }
+          }
+        }
+      }
     }
-    
   }
   
+  .hero-image {
+    width: 100%;
+    object-fit: cover;
+  }
+      
 }
-

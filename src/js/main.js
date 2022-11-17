@@ -1,13 +1,42 @@
 const search = document.querySelector('.header-search');
 const searchBtn = document.querySelector('.header-search__submit');
 const searchField = document.querySelector('.header-search__field');
+const searchSvg = document.querySelector('.search-submit__svg')
 const adressBtn = document.querySelector('.open-adress__btn');
 const openAdress = document.querySelector('.open-adress');
+const headerLogo = document.querySelector('.logo');
+const headerContainer = document.querySelector('.header-container');
+const burgerBtn = document.querySelector('.header-burger');
 
 searchBtn.addEventListener('click', function(){
-  searchField.classList.toggle('open');
   search.classList.toggle('visible');
+  searchField.classList.toggle('open');
+  if (search.classList.contains('visible')) {
+    searchSvg.firstElementChild.setAttribute('xlink:href', 'img/sprite.svg#search-close');
+    if (window.innerWidth<570){
+      headerLogo.classList.add('hidden');
+      headerContainer.style.justifyContent = 'end';
+    }
+  }
+  else {
+    searchSvg.firstElementChild.setAttribute('xlink:href', 'img/sprite.svg#search');
+    if (window.innerWidth<570){
+      searchField.style.transition = 'none';
+      headerLogo.classList.remove('hidden');
+      headerContainer.style.justifyContent = 'space-between';
+    }
+  }
 })
+
+burgerBtn.addEventListener('click', function(ev){
+  document.querySelector('.header').classList.toggle('open-burger');
+})
+
+window.addEventListener('resize', function(){
+  if (window.innerWidth>767) {
+    document.querySelector('.header').classList.remove('open-burger');
+  }
+});
 
 adressBtn.addEventListener('click', function(){
   openAdress.classList.remove('visible');
@@ -15,11 +44,22 @@ adressBtn.addEventListener('click', function(){
 
 ymaps.ready(init);
   function init(){
-    let myMap = new ymaps.Map("map", {
+    let myMap;
+
+    if (window.innerWidth<500) {
+      myMap = new ymaps.Map("map", {
+        center: [55.76, 37.636787],
+        zoom: 13,
+        controls: []
+      });
+    }
+    
+    else {myMap = new ymaps.Map("map", {
       center: [55.759501, 37.608868],
       zoom: 13.2,
       controls: []
     });
+  }
 
 
   let myPlacemark = new ymaps.Placemark([55.770233, 37.636787], {}, {

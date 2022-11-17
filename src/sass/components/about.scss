@@ -4,13 +4,36 @@
   background-color: $dark-background;
   color: $light-text;
 
+  @media (max-width: 1120px) {
+    padding-bottom: 84px;
+  }
+
+  @media (max-width: 850px) {
+    padding-bottom: 60px;
+  }
+
   &-container {
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   &-content {
-    width: 48.5%;
+    width: 50%;
+    padding-right: 15px;
+    
+    @media(max-width: 850px) {
+      width: 52%;
+      padding-right: 25px;
+    }
+
+    @media(max-width: 767px) {
+      width: 100%;
+      padding-right: 0px;
+    }
 
     &__title {
       margin: 0;
@@ -19,6 +42,11 @@
       font-weight: 700;
       font-size: 24px;
       line-height: 31px;
+
+      @media(max-width: 767px) {
+        font-size: 18px;
+        line-height: 23px;
+      }
     }
 
     &__text {
@@ -28,17 +56,32 @@
       font-size: 16px;
       line-height: 28px;
       color: $grey-text;
+
+      @media(max-width: 767px) {
+        font-size: 13.8px;
+        line-height: 25px;
+      }
     }
   }
 
   &-subscribe {
     padding-top: 32px;
 
+    @media(max-width: 767px) {
+      padding-top: 20px;
+    }
+
     &__title {
       font-family: 'TTFirsNeue';
       font-weight: 400;
       font-size: 24px;
       line-height: 22px;
+
+      @media(max-width: 767px) {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 22px;
+      }
     }
 
     .about-form {
@@ -47,9 +90,22 @@
       flex-wrap: nowrap;
       justify-content: space-between;
 
+      @media (max-width: 1120px) {
+        flex-wrap: wrap;
+      }
+
       &__label {
         position: relative;
         width: 75%;
+
+        @media (max-width: 1120px) {
+          width: 74%;
+          margin-bottom: 20px;
+        }
+
+        @media(max-width: 850px) {
+          width: 100%;
+        }
       }
 
       &__field {
@@ -62,6 +118,10 @@
         font-size: 16px;
         line-height: 19px;
         color: $light-text;
+
+        @media(max-width: 767px) {
+          padding: 11px 21px;
+        }
 
         &::placeholder {
           font-family: 'Roboto';
