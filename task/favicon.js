@@ -1,7 +1,6 @@
 const {src, dest} = require('gulp');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-const favicons = require('favicons');
 
 const path = require('../config/path');
 
