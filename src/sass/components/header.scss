@@ -54,19 +54,25 @@
   }
 
   &-menu {
+
     @media(max-width: 1023px) {
       position: absolute;
       z-index: 50;
       bottom: -45px;
-      left: 0;
+      left: 0px;
       width: 100%;
       height: 45px;
-      padding: 0 15px;
+      padding: 0 5px;
       background-color: transparent;
 
       @media(max-width: 767px) {
         display: flex;
         align-items: center;
+      }
+
+      @media(max-width: 390px) {
+        padding: 0 15px;
+
       }
     }
   }
@@ -136,10 +142,15 @@
       @media (max-width: 1200px) {
         margin-right: 18px;
       }
+
+      @media (max-width: 1023px) {
+        margin-right: 23px;
+      }
     }
 
     &__link {
       padding: 5px;
+      transition: color .3s ease-in-out;
 
       &:hover {
         color: $hover-color;
@@ -229,18 +240,20 @@
   }
   
   .search-submit {
-    &:hover .search-submit__svg{
-      fill: #ff6e30;
-    }
+    &__svg {
+      width: 25px;
+      height: 25px;
+      color: #ffffff;
+      transition: color .3s ease-in-out;
 
-  }
-  .search-submit__svg {
-    width: 25px;
-    height: 25px;
+      &:hover{
+        color: #ff6e30;
+      }
 
-    @media (max-width: 767px) {
-      width: 20px;
-      height: 20px;
+      @media (max-width: 767px) {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
