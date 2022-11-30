@@ -23,15 +23,10 @@ img {
   max-width: 100%;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
-}
+// a {
+//   text-decoration: none;
+//   color: inherit;
+// }
 
 input {
   border: none;
@@ -55,13 +50,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .is-hidden {
   display: none !important;
-}
-
-.btn--reset {
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
 }
 
 .container {
@@ -94,6 +82,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   font-size: 14px;
   line-height: 16px;
   background-color: $dark-background;
+  text-decoration: none;
 
   @media(max-width: 767px) {
     top: 5px;

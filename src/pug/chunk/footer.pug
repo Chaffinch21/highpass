@@ -1,4 +1,4 @@
--var list = [{name:"ok", href:"https://ok.ru/yelena.zelenkinakochergova", svg: "img/sprite.svg#ok"}, {name:"vk", href:"https://vk.com/chaffinch", svg: "img/sprite.svg#vk"}]
+-var list = [{name:"ok", label:"перейти на страницу highpass в одноклассниках", href:"https://ok.ru/yelena.zelenkinakochergova", svg: "img/sprite.svg#ok"}, {name:"vk", label:"перейти на страницу highpass вконтакте", href:"https://vk.com/chaffinch", svg: "img/sprite.svg#vk"}]
 
 footer.footer
   .container.footer-container
@@ -16,6 +16,6 @@ footer.footer
       ul.footer-social__list.social-list
         each item in list
           li.social-list__item
-            a.social-list__link(href=item.href aria-label=item.name class=item.name target="_blank")
+            a.social-list__link(href=item.href aria-label=item.label class=item.name target="_blank")
               svg.social-svg
                 use(xlink:href=item.svg)

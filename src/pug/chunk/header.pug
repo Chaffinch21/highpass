@@ -6,7 +6,7 @@ header.header
       svg.logo-svg
         use(xlink:href="img/sprite.svg#logo")
     nav.header-menu
-      button.btn--reset.header-burger.burger(type="button"  aria-label="Открыть меню")
+      button.header-burger.burger(type="button"  aria-label="Открыть меню")
           span.header-burger__line
           span.header-burger__line
           span.header-burger__line
@@ -17,6 +17,6 @@ header.header
       a.tel.header-tel(href="tel:+749542423532") +7&nbsp;495&nbsp;424&#8209;23&#8209;532
     form.header-search(action="#")
       input(type="search" name="header-search" placeholder="Что будем искать?" class="input-reset header-search__field" autocomplete="off")
-      button(type="button" aria-label="найти" class="btn btn--reset header-search__submit search-submit")
+      button(type="button" aria-label="найти" class="header-search__submit search-submit")
         svg.search-submit__svg
           use(xlink:href="img/sprite.svg#search")

@@ -68,163 +68,6 @@
       margin-left: calc(-50vw + 50%);
       margin-right: calc(-50vw + 50%);
     }
-
-    .open-adress {
-      display: none;
-      position: absolute;
-      z-index: 20;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 48%;
-      padding: 34px 60px 10px;
-      background-color: #202020D9;
-      color: $light-text;
-
-      @media (max-width: 1024px) {
-        bottom: 0;
-        top: auto;
-        width: 100%;
-        height: 34%;
-        padding: 11px 30px 10px;
-      }
-
-      @media (max-width: 500px) {
-        padding: 30px 20px 10px;
-      }
-
-      &.visible {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        @media (max-width: 500px) {
-          justify-content: start;
-        }
-      }
-
-      &__btn {
-        position: absolute;
-        top: 23px;
-        right: 19px;
-        z-index: 30;
-        width: 20px;
-        height: 20px;
-        border-radius: 10px;
-        background-color: $form-text;
-        transition: background-color .3s ease-in-out;
-
-        @media(max-width: 390px) {
-          right: 90px;
-        }
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 4px;
-          left: 10px;
-          width: 1px;
-          height: 12px;
-          background-color: #ffffff;
-          transform: rotate(45deg);
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          top: 4px;
-          left: 10px;
-          width: 1px;
-          height: 12px;
-          background-color: #ffffff;
-          transform: rotate(135deg);
-        }
-      &:hover {
-        background-color: $hover-color;
-      }
-
-      &:focus {
-        outline: none;
-        background-color: $focus-background;
-      }
-
-      &:active {
-        background-color: $active-color;
-      }
-      }
-
-      &__title {
-        margin: 0;
-        margin-bottom: 8px;
-        font-family: 'TTFirsNeue';
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 22px;
-
-        @media (max-width: 768px) {
-          margin-bottom: 6px;
-        }
-
-        @media (max-width: 500px) {
-          font-size: 18px;
-          line-height: 22px;
-          margin-bottom: 10px;
-        }
-      }
-
-      &__text {
-        margin: 0;
-        font-family: 'Roboto';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 28px;
-        color: $grey-text;
-
-        @media (max-width: 1024px) {
-          display: inline;
-          width: 60%;
-        }
-
-        @media (max-width: 900px) {
-          display: inline;
-          width: 90%;
-        }
-
-        @media (max-width: 768px) {
-          display: block;
-          width: 65%;
-        }
-
-        @media (max-width: 500px) {
-          width: 82%;
-          font-size: 14px;
-          line-height: 18px;
-        }
-      }
-
-      &__tel {
-        display: block;
-        font-weight: 500;
-
-        @media (max-width: 1024px) {
-          margin-left: 12px;
-          display: inline;
-        }
-
-        @media (max-width: 768px) {
-          margin-left: 0px;
-          display: block;
-        }
-
-        @media (max-width: 500px) {
-          margin-left: 0px;
-          margin-top: 10px;
-          display: block;
-          font-size: 14px;
-          line-height: 18px;
-        }
-      }
-    }
   }
 
   &-content {
@@ -276,117 +119,116 @@
         line-height: 18px;
       }
     }
+  }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
+  &-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__label {
+      position: relative;
       width: 100%;
+      margin-bottom: 20px;        
+    }
 
-      &__label {
-        position: relative;
-        width: 100%;
-        margin-bottom: 20px;        
+    &__input {
+      width: 100%;
+      padding: 14px 22px;
+      background: #e9e9e9;
+      border: 1px solid #e9e9e9;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $dark-background;
+      transition: border .3s ease-in-out;
+
+      @media (max-width: 500px) {
+        font-size: 14px;
+        line-height: 16px;
+        padding: 12px 22px;
       }
 
-      &__input {
-        width: 100%;
-        padding: 14px 22px;
-        background: #e9e9e9;
-        border: 1px solid #e9e9e9;
+      &::placeholder {
         font-family: 'Roboto';
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-        color: $dark-background;
-        transition: border .3s ease-in-out;
+        color: $form-text;
+        transition: color .3s ease-in-out;
 
         @media (max-width: 500px) {
           font-size: 14px;
           line-height: 16px;
-          padding: 12px 22px;
-        }
-
-        &::placeholder {
-          font-family: 'Roboto';
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 19px;
-          color: $form-text;
-          transition: color .3s ease-in-out;
-
-          @media (max-width: 500px) {
-            font-size: 14px;
-            line-height: 16px;
-          }
-        }
-
-        &:hover::placeholder {
-          color: $hover-color;
-        }
-
-        &:focus {
-          border: 1px solid $hover-color;
-        }
-
-        &:active {
-          border: 1px solid #e9e9e9;
         }
       }
 
-      &__textarea {
-        width: 100%;
-        height: 148px;
-        overflow-y: visible;
-        padding: 15px 23px 16px;
-        background: #e9e9e9;
+      &:hover::placeholder {
+        color: $hover-color;
+      }
+
+      &:focus {
+        border: 1px solid $hover-color;
+      }
+
+      &:active {
         border: 1px solid #e9e9e9;
-        border: none;
+      }
+    }
+
+    &__textarea {
+      width: 100%;
+      height: 148px;
+      overflow-y: visible;
+      padding: 15px 23px 16px;
+      background: #e9e9e9;
+      border: 1px solid #e9e9e9;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $dark-background;
+      transition: border .3s ease-in-out;
+
+      @media (max-width: 500px) {
+        height: 142px;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      &::placeholder {
         font-family: 'Roboto';
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
-        color: $dark-background;
-        transition: border .3s ease-in-out;
+        color: $form-text;
 
         @media (max-width: 500px) {
-          height: 142px;
           font-size: 14px;
           line-height: 16px;
         }
-
-        &::placeholder {
-          font-family: 'Roboto';
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 19px;
-          color: $form-text;
-
-          @media (max-width: 500px) {
-            font-size: 14px;
-            line-height: 16px;
-          }
-        }
-
-        &:hover::placeholder {
-          color: $hover-color;
-        }
-
-        &:focus {
-          border: 1px solid $hover-color;
-        }
-
-        &:active {
-          border: 1px solid #e9e9e9;
-        }
       }
 
-      &__btn {
-        @include orange-btn;
-        width: 126px;
+      &:hover::placeholder {
+        color: $hover-color;
+      }
 
-        @media (max-width: 500px) {
-          width: 115px;
-        }
+      &:focus {
+        border: 1px solid $hover-color;
+      }
+
+      &:active {
+        border: 1px solid #e9e9e9;
+      }
+    }
+
+    &__btn {
+      @include orange-btn;
+      width: 126px;
+
+      @media (max-width: 500px) {
+        width: 115px;
       }
     }
   }
@@ -417,5 +259,165 @@
 
   [class*="ground-pane"] {
     filter: grayscale(1);
+  }
+}
+
+.open-adress {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 48%;
+  padding: 34px 60px 10px;
+  background-color: #202020D9;
+  color: $light-text;
+
+  @media (max-width: 1024px) {
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 34%;
+    padding: 11px 30px 10px;
+  }
+
+  @media (max-width: 500px) {
+    padding: 30px 20px 10px;
+  }
+
+  &.visible {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 500px) {
+      justify-content: start;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    padding: 0;
+    top: 23px;
+    right: 19px;
+    z-index: 30;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: $form-text;
+    border: none;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+
+    @media(max-width: 390px) {
+      right: 90px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 10px;
+      width: 1px;
+      height: 12px;
+      background-color: #ffffff;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 10px;
+      width: 1px;
+      height: 12px;
+      background-color: #ffffff;
+      transform: rotate(135deg);
+    }
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $focus-background;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-family: 'TTFirsNeue';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: $grey-text;
+
+    @media (max-width: 1024px) {
+      display: inline;
+      width: 60%;
+    }
+
+    @media (max-width: 900px) {
+      display: inline;
+      width: 90%;
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 65%;
+    }
+
+    @media (max-width: 500px) {
+      width: 82%;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__tel {
+    display: block;
+    font-weight: 500;
+
+    @media (max-width: 1024px) {
+      margin-left: 12px;
+      display: inline;
+    }
+
+    @media (max-width: 768px) {
+      margin-left: 0px;
+      display: block;
+    }
+
+    @media (max-width: 500px) {
+      margin-left: 0px;
+      margin-top: 10px;
+      display: block;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }

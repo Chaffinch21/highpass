@@ -129,276 +129,6 @@
     &__card--seven {
       grid-area: project-seven;
     }
-
-    .small-card {
-
-      &--stretch {
-        @media (min-width: 769px) and (max-width: 1024px){
-          max-width: 466px;
-        }
-
-        @media (max-width: 768px) {
-          max-width: 218px;
-        }
-
-        @media (max-width: 500px){
-          max-width: 466px;
-        }
-      }
-
-      &__top {
-        width: 100%;
-        position: relative;
-        margin-bottom: 15px;
-
-        @media (max-width: 1024px) {
-          height: 184px;
-          margin-bottom: 19px;
-        }
-
-        @media (max-width: 390px) {
-          margin-bottom: 20px;
-        }
-
-        & .heshtag {
-          top: 8px;
-          right: 6px;
-        }
-      }
-
-      &__picture {
-        width: 100%;
-
-        @media (max-width: 1023px) {
-          height: 100%;
-        }
-      }
-
-      &__img {
-        
-        @media(max-width: 1024px) {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      &__text {
-        margin: 0;
-        margin-bottom: 10px;
-        font-family: 'Roboto';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-
-        @media (max-width: 1024px) {
-          -webkit-line-clamp: 2;
-          margin-bottom: 15px;
-        }
-
-        @media (max-width: 768px) {
-          -webkit-line-clamp: 3;
-        }
-
-        @media (max-width: 600px) {
-          font-size: 14px;
-        }
-
-        @media (max-width: 500px) {
-          font-size: 16px;
-          -webkit-line-clamp: 2;
-        }
-      }
-
-    }
-
-    .big-card {
-      position: relative;
-      width: 100%;
-      height: 100%;
-
-      & picture {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: 1;
-        overflow: hidden;
-      }
-
-      &__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      & .heshtag {
-        top: 10px;
-        right: 7px;
-      }
-
-      .big-content {
-        position: absolute;
-        top: 25px;
-        left: 30px;
-        bottom: 30px;
-        max-width: 46.5%;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        color: white;
-
-        @media(max-width:1280px) {
-          top: 29px;
-          bottom: 37px;
-          max-width: 60%;
-        }
-
-        @media(max-width:1024px) {
-          top: 33px;
-          bottom: 37px;
-          max-width: 50%;
-        }
-
-        @media(max-width:768px) {
-          top: 29px;
-          bottom: 32px;
-          max-width: 41%;
-        }
-
-        @media(max-width:600px) {
-          justify-content: end;
-        }
-
-        @media(max-width:500px) {
-          max-width: 65%;
-        }
-
-        &__date {
-          background-image: url('../img/svg/calendar-white.svg');
-          background-repeat: no-repeat;
-          background-size: 14px 14px;
-          background-position: left center;
-        }
-
-        &__title {
-          margin: 0;
-          margin-bottom: 5px;
-          font-family: 'TTFirsNeue';
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 24px;
-
-          @media(max-width: 500px) {
-            margin-bottom: 15px;
-            margin-top: 7px;
-          }
-        }
-
-        &__text {
-          margin: 0;
-          font-family: 'Roboto';
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 22px;
-
-          @media(max-width: 500px) {
-            font-size: 14px;
-            line-height: 16px;
-          }
-        }
-
-        &__btn {
-          display: inline;
-          max-width: 121px;
-          margin-top: auto;
-          color: $light-text;
-          background-color: transparent;
-          padding: 12px 19px;
-          font-family: 'Roboto';
-          font-weight: 700;
-          font-size: 16px;
-          border: 3px solid $btn-color;
-          transition: border .3s ease-in-out, background-color .3s ease-in-out;
-
-          @media(max-width: 500px) {
-            max-width: 109px;
-            padding: 8px 0px;
-            margin-top: 20px;
-            font-size: 14px;
-          }
-          
-          &:hover {
-            background-color: $hover-color;
-          }
-
-          &:focus {
-            outline: none;
-            background-color: $focus-background;
-          }
-
-          &:active {
-            background-color: $active-color;
-            border: 3px solid $active-color;
-          }
-        }
-      }
-
-      
-    }
-
-    .middle-card {
-
-      &__top {
-        position: relative;
-        margin-bottom: 15px;
-
-        @media(max-width: 768px) {
-          margin-bottom: 8px;
-        }
-
-        @media(max-width: 390px) {
-          margin-bottom: 15px;
-        }
-
-        & .heshtag {
-          top: 8px;
-          right: 6px;
-        }
-      }
-
-      &__text {
-        margin: 0;
-        margin-bottom: 10px;
-        font-family: 'Roboto';
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-
-        @media(max-width: 1024px) {
-          margin-bottom: 15px;
-        }
-
-        @media (max-width: 600px) {
-          font-size: 14px;
-          -webkit-line-clamp: 2;
-        }
-
-        @media (max-width: 390px) {
-          font-size: 16px;
-          -webkit-line-clamp: 3;
-        }
-      }
-
-
-    }
   }
 
   &-heshtag {
@@ -406,4 +136,274 @@
       padding: 4px 13px;
     }
   }
+}
+
+.small-card {
+
+  &--stretch {
+    @media (min-width: 769px) and (max-width: 1024px){
+      max-width: 466px;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 218px;
+    }
+
+    @media (max-width: 500px){
+      max-width: 466px;
+    }
+  }
+
+  &__top {
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+
+    @media (max-width: 1024px) {
+      height: 184px;
+      margin-bottom: 19px;
+    }
+
+    @media (max-width: 390px) {
+      margin-bottom: 20px;
+    }
+
+    & .heshtag {
+      top: 8px;
+      right: 6px;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+
+    @media (max-width: 1023px) {
+      height: 100%;
+    }
+  }
+
+  &__img {
+    
+    @media(max-width: 1024px) {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+
+    @media (max-width: 1024px) {
+      -webkit-line-clamp: 2;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      -webkit-line-clamp: 3;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 16px;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+}
+
+.big-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  & picture {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  & .heshtag {
+    top: 10px;
+    right: 7px;
+  }
+
+  .big-content {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    bottom: 30px;
+    max-width: 46.5%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    @media(max-width:1280px) {
+      top: 29px;
+      bottom: 37px;
+      max-width: 60%;
+    }
+
+    @media(max-width:1024px) {
+      top: 33px;
+      bottom: 37px;
+      max-width: 50%;
+    }
+
+    @media(max-width:768px) {
+      top: 29px;
+      bottom: 32px;
+      max-width: 41%;
+    }
+
+    @media(max-width:600px) {
+      justify-content: end;
+    }
+
+    @media(max-width:500px) {
+      max-width: 65%;
+    }
+
+    &__date {
+      background-image: url('../img/svg/calendar-white.svg');
+      background-repeat: no-repeat;
+      background-size: 14px 14px;
+      background-position: left center;
+    }
+
+    &__title {
+      margin: 0;
+      margin-bottom: 5px;
+      font-family: 'TTFirsNeue';
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 24px;
+
+      @media(max-width: 500px) {
+        margin-bottom: 15px;
+        margin-top: 7px;
+      }
+    }
+
+    &__text {
+      margin: 0;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+
+      @media(max-width: 500px) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    &__btn {
+      display: inline;
+      max-width: 121px;
+      margin-top: auto;
+      color: $light-text;
+      background-color: transparent;
+      padding: 12px 19px;
+      font-family: 'Roboto';
+      font-weight: 700;
+      font-size: 16px;
+      border: 3px solid $btn-color;
+      transition: border .3s ease-in-out, background-color .3s ease-in-out;
+
+      @media(max-width: 500px) {
+        max-width: 109px;
+        padding: 8px 0px;
+        margin-top: 20px;
+        font-size: 14px;
+      }
+      
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      &:focus {
+        outline: none;
+        background-color: $focus-background;
+      }
+
+      &:active {
+        background-color: $active-color;
+        border: 3px solid $active-color;
+      }
+    }
+  }
+
+  
+}
+
+.middle-card {
+
+  &__top {
+    position: relative;
+    margin-bottom: 15px;
+
+    @media(max-width: 768px) {
+      margin-bottom: 12px;
+    }
+
+    @media(max-width: 390px) {
+      margin-bottom: 15px;
+    }
+
+    & .heshtag {
+      top: 8px;
+      right: 6px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+
+    @media(max-width: 1024px) {
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 14px;
+      -webkit-line-clamp: 2;
+    }
+
+    @media (max-width: 390px) {
+      font-size: 16px;
+      -webkit-line-clamp: 3;
+    }
+  }
+
+
 }

@@ -92,87 +92,87 @@
         margin-top: 25px;
       }
     }
+  }
 
-    .about-form {
-      width: 100%;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: space-between;
+  &-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    @media (max-width: 1120px) {
+      flex-wrap: wrap;
+    }
+
+    &__label {
+      position: relative;
+      width: 75%;
 
       @media (max-width: 1120px) {
-        flex-wrap: wrap;
+        width: 74%;
+        margin-bottom: 20px;
       }
 
-      &__label {
-        position: relative;
-        width: 75%;
-
-        @media (max-width: 1120px) {
-          width: 74%;
-          margin-bottom: 20px;
-        }
-
-        @media(max-width: 850px) {
-          width: 100%;
-        }
-      }
-
-      &__field {
+      @media(max-width: 850px) {
         width: 100%;
-        padding: 14px 21px;
-        border: 1px solid $grey-background;
-        background-color: $grey-background;
+      }
+    }
+
+    &__field {
+      width: 100%;
+      padding: 14px 21px;
+      border: 1px solid $grey-background;
+      background-color: $grey-background;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $light-text;
+
+      @media(max-width: 767px) {
+        padding: 11px 21px;
+      }
+
+      &::placeholder {
         font-family: 'Roboto';
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
+        color: $grey-text;
+        transition: color .3s ease-in-out;
+      }
+
+      &:hover::placeholder {
+        color: $hover-color;
+      }
+
+      &:focus {
+        border: 1px solid $hover-color;
+      }
+
+      &:active {
+        border: 1px solid $grey-background;
         color: $light-text;
-
-        @media(max-width: 767px) {
-          padding: 11px 21px;
-        }
-
-        &::placeholder {
-          font-family: 'Roboto';
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 19px;
-          color: $grey-text;
-          transition: color .3s ease-in-out;
-        }
-
-        &:hover::placeholder {
-          color: $hover-color;
-        }
-
-        &:focus {
-          border: 1px solid $hover-color;
-        }
-
-        &:active {
-          border: 1px solid $grey-background;
-          color: $light-text;
-        }
       }
+    }
 
-      &__submit {
-        @include orange-btn;
-      }
+    &__submit {
+      @include orange-btn;
+    }
 
-      .js-validate-error-field {
-        border: 1px solid #f06666 !important;
-      }
-    
-      .js-validate-error-label {
-        position: absolute;
-        top: 3px;
-        left: 23px;
-        color: #f06666 !important;
-        font-family: 'Roboto';
-        font-weight: 400;
-        font-size: 9px;
-        line-height: 11px;
-      }
+    .js-validate-error-field {
+      border: 1px solid #f06666 !important;
+    }
+  
+    .js-validate-error-label {
+      position: absolute;
+      top: 3px;
+      left: 23px;
+      color: #f06666 !important;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 11px;
     }
   }
 

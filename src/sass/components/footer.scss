@@ -48,25 +48,6 @@
       padding: 15px 0;
       background-color: #4A4A4A;
     }
-
-    .logo-svg {
-      width: 190.25px;
-      height: 30.7px;
-
-      @media (max-width: 1200px) {
-        width: 166px;
-        height: 26.7px;
-      }
-
-      @media (max-width:590px) {
-        width: 112px;
-        height: 18px;
-      }
-  
-      &:focus {
-        outline: none;
-      }
-    }
   
     &__descr {
       margin: 0;
@@ -87,6 +68,10 @@
 
   &-quote {
     grid-column: 5/11;
+
+    @media (max-width: 1180px) {
+      grid-column: 5/10;
+    }
 
     @media (max-width: 1024px) {
       grid-column: 4/7;
@@ -112,6 +97,10 @@
 
   &-social {
     grid-column: 11/13;
+
+    @media (max-width: 1180px) {
+      grid-column: 10/13;
+    }
 
     @media (max-width: 1024px) {
       grid-column: 7/9;
@@ -140,45 +129,66 @@
         text-align: center;
       }
     }
+  }
+}
 
-    .social-list {
-      display: flex;
-      justify-content: flex-end;
-      margin: 0;
-      margin-right: 40px;
+.social-list {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  margin-right: 40px;
+  padding: 0;
+  list-style: none;
 
-      @media(max-width: 590px) {
-        justify-content: center;
-        margin: 0;
-      }
+  @media(max-width: 590px) {
+    justify-content: center;
+    margin: 0;
+  }
 
-      &__item {
-        
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-      }
+  &__item {
+    
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  }
 
-      &__link {
-        .social-svg {
-          width: 30px;
-          height: 30px;
-          color: #cacaca;
-          transition: color .3s ease-in-out;       
-        }
-
-        &:hover .social-svg{
-          color: $hover-color;
-        }
-
-        &:hover .social-svg{
-          color: $focus-background;
-        }
-
-        &:active .social-svg{
-          color: $active-color;
-        }
-      }
+  &__link {
+    .social-svg {
+      width: 30px;
+      height: 30px;
+      color: #cacaca;
+      transition: color .3s ease-in-out;       
     }
+
+    &:hover .social-svg{
+      color: $hover-color;
+    }
+
+    &:hover .social-svg{
+      color: $focus-background;
+    }
+
+    &:active .social-svg{
+      color: $active-color;
+    }
+  }
+}
+
+.logo-svg {
+  width: 190.25px;
+  height: 30.7px;
+
+  @media (max-width: 1200px) {
+    width: 166px;
+    height: 26.7px;
+  }
+
+  @media (max-width:590px) {
+    width: 112px;
+    height: 18px;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
