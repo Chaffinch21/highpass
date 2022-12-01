@@ -108,11 +108,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   background-repeat: no-repeat;
   background-size: 14px 14px;
 
-  &.big-content__date {
-    position: relative;
-    top: auto;
-    left: auto;
-  }
+  // &.big-content__date {
+  //   position: relative;
+  //   top: auto;
+  //   left: auto;
+  // }
 }
 
 .tel {

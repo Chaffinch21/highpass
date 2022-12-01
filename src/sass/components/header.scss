@@ -246,29 +246,6 @@
       }
     }
   }
-  
-  .search-submit {
-    padding: 0;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-
-    &__svg {
-      width: 25px;
-      height: 25px;
-      color: #ffffff;
-      transition: color .3s ease-in-out;
-
-      &:hover{
-        color: #ff6e30;
-      }
-
-      @media (max-width: 767px) {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
 
   &.open-burger {
 
@@ -341,6 +318,28 @@
       display: block;
       margin-top: auto;
     }
+  }    
+}
+
+.search-submit {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  &__svg {
+    width: 25px;
+    height: 25px;
+    color: #ffffff;
+    transition: color .3s ease-in-out;
+
+    &:hover{
+      color: #ff6e30;
+    }
+
+    @media (max-width: 767px) {
+      width: 20px;
+      height: 20px;
+    }
   }
-    
 }
